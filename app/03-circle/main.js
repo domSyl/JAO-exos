@@ -23,6 +23,7 @@ class Circle {
         const svg = document.querySelector('svg');
         // createElement de Javascript est à remplacer par createElementNS, à cause du namespace
         const point = document.createElementNS(SVGNS,'circle');
+        point.setAttribute('id',`point_${angle}`)
         point.setAttribute('cx', this.cx + this.radius * Math.cos(a));
         point.setAttribute('cy', this.cy - this.radius * Math.sin(a));
         point.setAttribute('r', 3);
@@ -45,6 +46,12 @@ class Circle {
         line.setAttribute('stroke-width', '2');
         svg.appendChild(line);        
     }
+
+    removePoint(angle) {
+        try {
+            document.querySelector(`#point_${angle}`).remove();
+        } catch (e) {}
+    }
 }
 
 
@@ -57,6 +64,11 @@ function main(){
         c.setPoint(90);
         c.setPoint(270);
         c.setLine(30, 90);
+        //arrowFonction
+        setTimeout(() => {
+            c.removePoint(61);
+            c.removePoint(60);
+        }, 1000);
    }
     
 main();
