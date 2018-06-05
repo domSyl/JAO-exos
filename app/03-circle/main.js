@@ -50,13 +50,13 @@ class Circle {
 
     removePoint(angle) {
         try {
-            document.querySelector(`#point_${angle}`).remove();
+            document.querySelector(`#point_${angle}`).outerHTML='';
         } catch (e) {}
     }
 
     removeLine(angle1, angle2) {
         try {
-            document.querySelector(`#line_${angle1}_${angle2}`).remove();
+            document.querySelector(`#line_${angle1}_${angle2}`).outerHTML='';
         } catch (e) {}
     }
 }
