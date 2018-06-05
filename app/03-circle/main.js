@@ -38,6 +38,7 @@ class Circle {
         const a2 = angle2 * 2 * Math.PI / 360 ; 
         const svg = document.querySelector('svg');
         const line = document.createElementNS(SVGNS,'line');
+        line.setAttribute('id', `line_${angle1}_${angle2}`);
         line.setAttribute('x1', this.cx + this.radius * Math.cos(a1));
         line.setAttribute('y1', this.cy - this.radius * Math.sin(a1));
         line.setAttribute('x2', this.cx + this.radius * Math.cos(a2));
@@ -50,6 +51,12 @@ class Circle {
     removePoint(angle) {
         try {
             document.querySelector(`#point_${angle}`).remove();
+        } catch (e) {}
+    }
+
+    removeLine(angle1, angle2) {
+        try {
+            document.querySelector(`#line_${angle1}_${angle2}`).remove();
         } catch (e) {}
     }
 }
@@ -68,6 +75,8 @@ function main(){
         setTimeout(() => {
             c.removePoint(61);
             c.removePoint(60);
+            c.removeLine(30, 90);
+            c.removeLine(40, 50);
         }, 1000);
    }
     
