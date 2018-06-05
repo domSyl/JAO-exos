@@ -1,11 +1,14 @@
 class Circle {
-    constructor() {}
+    constructor(radius) {
+        this.radius = radius;
+    }
 
     draw(){
         const div = document.querySelector('div');
+        const r = this.radius;
     div.innerHTML = `
-<svg width="600" height="600">
-    <circle cx="300" cy="300" r="200" stroke="#000" stroke-width="2" fill="transparent" />
+<svg width="${3*r}" height="${3*r}">
+    <circle cx="${1.5*r}" cy="${1.5*r}" r="${r}" stroke="#000" stroke-width="2" fill="transparent" />
 </svg>
     `;
     }
@@ -16,7 +19,7 @@ function makeCircle() {
 
 function main(){
         console.log('Tracé du cercle')
-        const c = new Circle();
+        const c = new Circle(300);
         c.draw();
    }
     
