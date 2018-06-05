@@ -1,6 +1,11 @@
 function main(){
-        const m = new Multiply();
-        m.draw();
+        for (let i = 0; i < 1000; i++){
+            setTimeout(() => {
+                const m = new Multiply(i, 20);
+                m.draw();
+            }, 16*i)
+            
+        }
    }
     
 main();

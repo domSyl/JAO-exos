@@ -13,7 +13,7 @@ class Circle {
         const r = this.radius;
     div.innerHTML = `
 <svg width="${3 * r}" height="${3 * r}">
-    <circle cx="${this.cx}" cy="${this.cy}" r="${r}" stroke="#000" stroke-width="2" fill="transparent" />
+    <circle cx="${this.cx}" cy="${this.cy}" r="${r}" stroke="#000" stroke-width="1" fill="transparent" />
 </svg>
     `;
     }
@@ -29,7 +29,7 @@ class Circle {
         point.setAttribute('r', 3);
         point.setAttribute('fill', '#000');
         point.setAttribute('stroke', '#000');
-        point.setAttribute('stroke-width', '2');
+        point.setAttribute('stroke-width', '0.5');
         svg.appendChild(point);
     }
 
@@ -44,7 +44,7 @@ class Circle {
         line.setAttribute('x2', this.cx + this.radius * Math.cos(a2));
         line.setAttribute('y2', this.cy - this.radius * Math.sin(a2));
         line.setAttribute('stroke', '#000');
-        line.setAttribute('stroke-width', '2');
+        line.setAttribute('stroke-width', '0.5');
         svg.appendChild(line);        
     }
 
