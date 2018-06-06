@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+.table {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    background: hsl(0, 0%, 90%);
+    justify-content: space-evenly;
+    border: 0.05em solid black;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.cell {
+    margin: 0.05em;
+    background: white;
+}
+
+.active {
+    background: black;
+}
+
+.editor {
+    display: inline-flex;
+    flex-flow: column nowrap;
+}
+
+button {
+    padding: 0.5em 1em;
+    background: #eee;
+    border: 1px solid black;
+    margin: 0.5em;
+}
